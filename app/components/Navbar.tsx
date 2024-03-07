@@ -13,7 +13,7 @@ function FloatingNavDemo() {
     },
     {
       name: "Docs",
-      link: "https://0rbit-docs.vercel.app/",
+      link: "https://docs.0rbit.co/",
     },
   ];
   return (
