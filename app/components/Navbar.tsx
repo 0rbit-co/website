@@ -15,6 +15,10 @@ function FloatingNavDemo() {
       name: "Docs",
       link: "https://docs.0rbit.co/",
     },
+    {
+      name: "Quests",
+      link: "https://github.com/0rbit-co/quest/blob/main/quest.md",
+    }
   ];
   return (
     <div className="relative w-full">
