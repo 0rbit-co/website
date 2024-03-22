@@ -17,7 +17,7 @@ function FloatingNavDemo() {
     },
     {
       name: "Quests",
-      link: "https://github.com/0rbit-co/quest/blob/main/quest.md",
+      link: "/quests",
     },
   ];
   return (
