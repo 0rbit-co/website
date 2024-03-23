@@ -23,27 +23,37 @@ function QuestsCard({
 }: ServicesProps) {
   return (
     <CardContainer className="inter-var">
-      <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+      <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1]  h-auto rounded-xl p-6 border  ">
         <CardItem
           as="p"
           translateZ="60"
-          className="text-neutral-500 text-md  lg:max-w-lg max-w-sm mt-2 dark:text-neutral-300"
+          className="text-neutral-500 text-sm font-light tracking-wide lg:max-w-sm max-w-sm mt-2 dark:text-neutral-300"
         >
           {description}
         </CardItem>
         <CardItem
           as="p"
           translateZ="60"
-          className="text-neutral-500 md:text-sm text-[12px] lg:max-w-lg max-w-sm mt-2 dark:text-neutral-300 bg-[#ffffff1e] md:px-10 px-[27px] py-4 border border-[#FFD700] rounded-md"
+          className="text-neutral-500 md:text-xs text-[12px] lg:max-w-sm max-w-sm mt-2 dark:text-neutral-300 bg-[#ffffff1e] md:px-[27px] px-[27px] py-4 border border-[#FFD700] rounded-md"
         >
-          <h4>
-            Submit PR at: <span>{url}</span>
+          <h4 className=" leading-6 tracking-wider ">
+            Submit PR at:{" "}
+            <span>
+              <Link
+                href={url.split("with the")[0]}
+                className="hover:underline bg-[#000000] py-[3px] px-[6px] rounded-xl border-[1px] border-[#dadada4b]"
+              >
+                {url.split("with the")[0]}
+              </Link>
+            </span>
+            <span>{url.split("with the")[1]}</span>
+            <span>add codebase with demo link in Description!</span>
           </h4>
         </CardItem>
         <CardItem
           as="p"
           translateZ="60"
-          className="text-neutral-500 text-xs lg:max-w-lg max-w-sm mt-2 dark:text-neutral-300 w-full text-right
+          className="text-neutral-500 text-xs lg:max-w-sm max-w-sm mt-2 dark:text-neutral-300 w-full text-right
           hover:underline"
         >
           <Link href="https://github.com/0rbit-co/quest">know more...</Link>
@@ -58,13 +68,13 @@ function QuestsCard({
           /> */}
         {/* <Http imgUrl={imgUri} /> */}
         {/* </CardItem> */}
-        <div className="flex justify-between items-center mt-10">
+        <div className="flex justify-between items-center mt-[21px]">
           <CardItem
             translateZ="50"
-            className="md:text-3xl text-[24px] font-bold text-neutral-600 dark:text-white flex justify-between items-center w-full"
+            className="md:text-2xl text-[24px] font-bold text-neutral-600 dark:text-[#f1f1f1] flex justify-between items-center w-full"
           >
-            <h6>{title}</h6>
-            <span className="bg-[#ffd9002c] border-[1px] border-[#FFD700] rounded-full px-[9px] py-[3px] md:text-[15px] text-[12px]">
+            <h6 className="tracking-wider font-normal">{title}</h6>
+            <span className="bg-[#ffd9002c] font-extrabold border-[1px] border-[#FFD700] rounded-full px-[9px] py-[3px] md:text-[12px] text-[9px]">
               + {points.split(" ")[1]} OP
             </span>
           </CardItem>
