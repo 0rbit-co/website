@@ -1,9 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/app/utils/cn";
 import Link from "next/link";
 
@@ -18,7 +15,6 @@ export const FloatingNav = ({
   }[];
   className?: string;
 }) => {
-
   const [visible, setVisible] = useState(true);
 
   return (
@@ -41,16 +37,17 @@ export const FloatingNav = ({
         )}
       >
         {navItems.map((navItem: any, idx: number) => (
-          <Link
+          <a
             key={`link=${idx}`}
             href={navItem.link}
+            target={navItem.name == "Docs" ? "_blank" : ""}
             className={cn(
               "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
             )}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             <span className="sm:block text-sm">{navItem.name}</span>
-          </Link>
+          </a>
         ))}
       </motion.div>
     </AnimatePresence>

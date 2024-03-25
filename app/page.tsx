@@ -12,9 +12,6 @@ import ContactPreview from "./components/ContactPreview";
 const page = () => {
   return (
     <div>
-      <div>
-        <FloatingNavDemo />
-      </div>
       <div className="">
         <SpotlightPreview />
       </div>
@@ -43,9 +40,6 @@ const page = () => {
       <div className="my-20">
         <ContactPreview title="Contact Us" />
         <Form />
-      </div>
-      <div className="px-20">
-        <Footer />
       </div>
     </div>
   );

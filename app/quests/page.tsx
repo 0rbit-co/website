@@ -40,9 +40,9 @@ const QuestsPage = () => {
         height={300}
         width={900}
       />
-      <div className="bottom-0 my-[18px] w-full md:absolute px-6">
+      {/* <div className="bottom-0 my-[18px] w-full md:absolute px-6">
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 };

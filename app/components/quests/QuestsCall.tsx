@@ -9,7 +9,7 @@ const QuestsCall = () => {
         num="1"
         linker="https://github.com/0rbit-co/quest/blob/main/price-feed-bot.md"
         name="Price Feed Bot"
-        text="Create a Bot for the chatroom that will provide the price feed for token(s) when a users asks."
+        text="Create a Bot that provides price feed for token(s)."
         points="200000"
       />
       <QuestCard
