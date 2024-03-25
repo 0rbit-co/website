@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/app/components/ui/3d-card";
 import Http from "@/app/components/Http";
-import QuestTitle from "./QuestTitle";
+import QuestTitle from "../quests/QuestTitle";
 import Link from "next/link";
 
 interface ServicesProps {

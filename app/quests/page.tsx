@@ -2,14 +2,15 @@ import React from "react";
 import SpotlightPreview from "../components/SpotlightPreview";
 import FloatingNavDemo from "../components/Navbar";
 import { Spotlight } from "../components/ui/Spotlight";
-import QuestsCall from "../components/quests/QuestsCall";
 import SparklesPreview from "../components/SparklesPreview";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import QuestsCall from "../components/quests/QuestsCall";
+import Image from "next/image";
 
 const QuestsPage = () => {
   return (
-    <div className="px-20 min-h-[100vh]">
+    <div className="min-h-[100vh] flex flex-col items-center">
       {" "}
       <FloatingNavDemo />
       <div className="">
@@ -32,7 +33,14 @@ const QuestsPage = () => {
         mentioned in the Url.
       </h2> */}
       <QuestsCall />
-      <div className="bottom-0 my-[18px]">
+      <Image
+        src="/quest/questStage.svg"
+        alt="quests oracle"
+        className="z-[-10] md:mt-[-21px] mt-[-12px] w-full"
+        height={300}
+        width={900}
+      />
+      <div className="bottom-0 my-[18px] w-full md:absolute px-6">
         <Footer />
       </div>
     </div>

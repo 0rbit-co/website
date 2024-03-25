@@ -1,73 +1,26 @@
-"use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import SparklesPreview from "../SparklesPreview";
-import ContactPreview from "../ContactPreview";
-import ServicesCard from "../ServicesCard";
-import QuestsCard from "./QuestsCard";
-import QuestTitle from "./QuestTitle";
+import React from "react";
+import QuestCard from "./QuestCard";
 
-export default function QuestsCall() {
-  const [result, setResult] = useState([]);
-  async function fetchRepos() {
-    const response = await fetch(
-      "https://raw.githubusercontent.com/0rbit-co/quest/main/quest.md",
-      {
-        next: {
-          revalidate: 60,
-        },
-      }
-    );
-    const rawMD = await response.text();
-    // console.log(typeof rawMD);
-    return rawMD;
-  }
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const mdText = await fetchRepos();
-        const parsedData = await customParser(mdText);
-        setResult(parsedData);
-      } catch (error) {
-        console.error("Error fetching and parsing data:", error);
-      }
-    }
-    fetchData();
-  }, []);
-
-  const customParser = async (mdText: any) => {
-    const finalMD = await mdText;
-    // console.log(typeof a);
-    const blocks = finalMD.split("- #");
-    const headings = blocks.map((l: any, id: any) => {
-      return l.split(/\b(?:Name|Description|Submit a PR here|Points|Url):/);
-    });
-    console.log(headings);
-    return headings;
-  };
-  // console.log(result[1][3]);
+const QuestsCall = () => {
   return (
-    <div className="grid lg:grid-flow-col gap-12 items-center justify-around w-full">
-      {result.map((block, id) => {
-        if (id == 0) {
-          return;
-        }
-        return (
-          <div className="grid grid-flow-row">
-            <QuestsCard
-              title={block[1]}
-              description={block[2]}
-              url={block[3]}
-              imgUri="/data-access.svg"
-              points={block[4]}
-            />
-            {/* <QuestTitle title={block[1]} />
-            <h1>{block[2]}</h1>
-            <p>{block[3]}</p>
-            <h1>{block[4]}</h1> */}
-          </div>
-        );
-      })}
+    <div className="flex md:flex-row md:gap-0 gap-6 flex-col items-center justify-evenly w-full">
+      <QuestCard
+        num="1"
+        linker="https://github.com/0rbit-co/quest/blob/main/price-feed-bot.md"
+        name="Price Feed Bot"
+        text="Create a Bot for the chatroom that will provide the price feed for token(s) when a users asks."
+        points="200000"
+      />
+      <QuestCard
+        num="2"
+        linker="https://github.com/0rbit-co/quest/blob/main/news-feed-bot.md"
+        name="News Feed Bot"
+        text="Create a Cron-bot that will post the latest news every 4 hours."
+        points="300000"
+      />
     </div>
   );
-}
+};
+
+export default QuestsCall;
