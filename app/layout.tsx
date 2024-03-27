@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
@@ -19,6 +20,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          strategy="lazyOnload"
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+        ></Script>
+        <Script id="google-analytics" strategy="lazyOnload">
+          {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${process.env.GOOGLE_ANALYTICS}');`}
+        </Script>
+      </head>
       <body className={inter.className}>
         <FloatingNavDemo />
         {children}
