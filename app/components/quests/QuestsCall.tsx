@@ -31,6 +31,7 @@ const QuestsCall = () => {
         />
       </div>
       <QuestsModal
+        num="1"
         vis={displayModal}
         onClosing={() => {
           setDisplayModal(false);
