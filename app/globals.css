@@ -48,3 +48,7 @@ body {
 .drag:active {
   cursor: grabbing;
 }
+
+body {
+  background: black;
+}
