@@ -10,14 +10,21 @@ const QuestsCall = () => {
         linker="https://github.com/0rbit-co/quest/blob/main/price-feed-bot.md"
         name="Price Feed Bot"
         text="Create a Bot that provides price feed for token(s)."
-        points="200000"
+        points="200.000"
       />
       <QuestCard
         num="2"
         linker="https://github.com/0rbit-co/quest/blob/main/news-feed-bot.md"
         name="News Feed Bot"
         text="Create a Cron-bot that will post the latest news every 4 hours."
-        points="300000"
+        points="300.000"
+      />
+      <QuestCard
+        num="3"
+        linker="https://github.com/0rbit-co/quest/blob/main/better-idea.md"
+        name="BetterIDEa"
+        text="Create an ao process using BetterIdea (with functionality)"
+        points="50.000"
       />
     </section>
   );

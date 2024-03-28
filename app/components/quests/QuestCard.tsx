@@ -1,3 +1,4 @@
+// "use client";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import Image from "next/image";
@@ -15,6 +16,7 @@ interface QuestCardProps {
 }
 
 const QuestCard = ({ num, name, linker, text, points }: QuestCardProps) => {
+  // const [i, setI] = useState(false);
   return (
     <article>
       <CardContainer>
@@ -29,30 +31,41 @@ const QuestCard = ({ num, name, linker, text, points }: QuestCardProps) => {
             className={`flex items-center justify-center gap-3 ${anp.className} px-6 py-3
           sm:text-[57px] text-[39px] font-semibold text-neutral-500 dark:text-neutral-300 leading-[36px]
           tracking-wide lg:max-w-[330px] sm:max-w-[330px] max-w-[240px] w-full `}
-          >
-            {" "}
-            {num == 1 && (
-              <>
-                <h2>$</h2>
-                <Image
-                  src="/quest/q1Arrows.svg"
-                  height={150}
-                  width={60}
-                  alt="oracle pricefeed"
-                />
-                <h2 className="">0RBT</h2>
-              </>
-            )}
-            {num == 2 && (
-              <>
-                <h2 className=" tracking-[21px] mr-[-24px]">NEWS</h2>
-              </>
-            )}
-          </CardItem>
-          <CardItem
-            as="p"
-            translateZ="60"
-            className={`${anp.className} sm:text-[15px] text-[12px] dark:text-neutral-300 tracking-wide
+        >
+          {" "}
+          {num == 1 && (
+            <>
+              <h2>$</h2>
+              <Image
+                src="/quest/q1Arrows.svg"
+                height={150}
+                width={60}
+                alt="oracle pricefeed"
+              />
+              <h2 className="">0RBT</h2>
+            </>
+          )}
+          {num == 2 && (
+            <>
+              <h2 className=" tracking-[21px] mr-[-24px]">NEWS</h2>
+            </>
+          )}
+          {num == 3 && (
+            <div className="sm:text-[39px] text-[21px] tracking-normal flex flex-col items-center font-medium my-[-18px] gap-[-3px] leading-[27px]">
+              <h2>0rbit</h2>
+              <h2>x</h2>
+              <h2>
+                {" "}
+                BetterIDE
+                <span className="sm:text-[54px] text-[36px]">a</span>
+              </h2>
+            </div>
+          )}
+        </CardItem>
+        <CardItem
+          as="p"
+          translateZ="60"
+          className={`${anp.className} sm:text-[15px] text-[12px] dark:text-neutral-300 tracking-wide
           lg:max-w-[330px] sm:max-w-[330px] max-w-[240px] md:px-[9px] px-[6px] py-[6px] leading-[21px] text-justify 
           border-[0.6px] border-[#E2B436] bg-[#cf893437] rounded-md mx-[9px]`}
           >
@@ -75,10 +88,13 @@ const QuestCard = ({ num, name, linker, text, points }: QuestCardProps) => {
             <Link
               className="hover:underline-offset-4 underline underline-offset-2 hover:cursor-pointer hover:tracking-wide
             sm:text-[24px] text-[18px] tracking-widest"
-              href={linker}
-            >
-              CHECK THE REPO
-            </Link>
+            href={linker}
+          >
+            CHECK THE REPO
+          </Link>
+          {num == 3 ? (
+            ""
+          ) : (
             <Link
               className="text-[12px] font-light tracking-wider px-[6px] py-[2px]
             hover:cursor-pointer hover:bg-[#cf893457] bg-[#cf8934c3]"
@@ -86,26 +102,44 @@ const QuestCard = ({ num, name, linker, text, points }: QuestCardProps) => {
             >
               Submit PR Here
             </Link>
-          </CardItem>
-          <CardItem
-            translateZ="50"
-            className="sm:text-2xl text-[18px] font-bold text-neutral-600 dark:text-[#f1f1f1] flex justify-between items-center w-full"
-          >
-            <h6 className="tracking-wider font-extralight text-[#CF8934]">
-              {name}
-            </h6>
-            <span
-              className={`bg-[#cf893425] font-extrabold border-[0.6px] border-[#CF8934] rounded-full 
+          )}
+        </CardItem>
+        <CardItem
+          translateZ="50"
+          className="sm:text-2xl text-[18px] font-bold text-neutral-600 dark:text-[#f1f1f1] flex justify-between items-center w-full"
+        >
+          <h6 className="tracking-wider font-extralight text-[#CF8934]">
+            {name}
+          </h6>
+          <span
+            className={`bg-[#cf893425] font-extrabold border-[0.6px] border-[#CF8934] rounded-full 
           px-[9px] py-[6px] sm:text-[18px] text-[12px] leading-3
           animate-shimmer bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%]   transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
           ${anp.className}`}
-            >
-              +{points} 0P
+          >
+            +{points} 0P{" "}
+            {/* {num == 3 && (
+              <span
+                onMouseEnter={() => {
+                  setI(true);
+                }}
+                onMouseLeave={() => {
+                  setI(false);
+                }}
+                className="hover:cursor-pointer px-[6px] py-[2px] text-[12px] rounded-full bg-[#323232] text-[#cacaca]"
+              >
+                i
+              </span>
+            )} */}
+          </span>
+          {/* {i && (
+            <span className="absolute text-[12px] text-end mr-[-27px] bg-[#323232] text-[#cacaca] max-w-24 px-[12px] py-[6px]">
+              First 100 Wallets recieve 50 0p each!
             </span>
-          </CardItem>
-        </CardBody>
-      </CardContainer>
-    </article>
+          )} */}
+        </CardItem>
+      </CardBody>
+    </CardContainer>
   );
 };
 
