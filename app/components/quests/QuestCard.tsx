@@ -1,3 +1,4 @@
+// "use client";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import Image from "next/image";
@@ -15,6 +16,7 @@ interface QuestCardProps {
 }
 
 const QuestCard = ({ num, name, linker, text, points }: QuestCardProps) => {
+  // const [i, setI] = useState(false);
   return (
     <CardContainer>
       <CardBody
@@ -47,6 +49,17 @@ const QuestCard = ({ num, name, linker, text, points }: QuestCardProps) => {
               <h2 className=" tracking-[21px] mr-[-24px]">NEWS</h2>
             </>
           )}
+          {num == 3 && (
+            <div className="sm:text-[39px] text-[21px] tracking-normal flex flex-col items-center font-medium my-[-18px] gap-[-3px] leading-[27px]">
+              <h2>0rbit</h2>
+              <h2>x</h2>
+              <h2>
+                {" "}
+                BetterIDE
+                <span className="sm:text-[54px] text-[36px]">a</span>
+              </h2>
+            </div>
+          )}
         </CardItem>
         <CardItem
           as="p"
@@ -78,13 +91,17 @@ const QuestCard = ({ num, name, linker, text, points }: QuestCardProps) => {
           >
             CHECK THE REPO
           </Link>
-          <Link
-            className="text-[12px] font-light tracking-wider px-[6px] py-[2px]
+          {num == 3 ? (
+            ""
+          ) : (
+            <Link
+              className="text-[12px] font-light tracking-wider px-[6px] py-[2px]
             hover:cursor-pointer hover:bg-[#cf893457] bg-[#cf8934c3]"
-            href="https://github.com/0rbit-co/quest"
-          >
-            Submit PR Here
-          </Link>
+              href="https://github.com/0rbit-co/quest"
+            >
+              Submit PR Here
+            </Link>
+          )}
         </CardItem>
         <CardItem
           translateZ="50"
@@ -99,8 +116,26 @@ const QuestCard = ({ num, name, linker, text, points }: QuestCardProps) => {
           animate-shimmer bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%]   transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
           ${anp.className}`}
           >
-            +{points} 0P
+            +{points} 0P{" "}
+            {/* {num == 3 && (
+              <span
+                onMouseEnter={() => {
+                  setI(true);
+                }}
+                onMouseLeave={() => {
+                  setI(false);
+                }}
+                className="hover:cursor-pointer px-[6px] py-[2px] text-[12px] rounded-full bg-[#323232] text-[#cacaca]"
+              >
+                i
+              </span>
+            )} */}
           </span>
+          {/* {i && (
+            <span className="absolute text-[12px] text-end mr-[-27px] bg-[#323232] text-[#cacaca] max-w-24 px-[12px] py-[6px]">
+              First 100 Wallets recieve 50 0p each!
+            </span>
+          )} */}
         </CardItem>
       </CardBody>
     </CardContainer>
