@@ -9,7 +9,7 @@ import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="sm:mt-20 mt-6 lg:m-6 px-12">
+    <div className="sm:mt-32 mt-6 lg:m-6 px-12">
       <div className="flex sm:flex-row flex-col justify-between items-center sm:gap-0 gap-3">
         <Image
           src="/svg/main-unit.svg"
@@ -18,7 +18,7 @@ const Footer = () => {
           height={100}
         />
 
-        <div className="flex justify-center sm:mt-10 text-[#b97340] text-xs">
+        <div className="flex justify-center sm:mt-6 text-[#b97340] text-xs">
           © 2024 0rbit.
         </div>
         <div className="flex items-center gap-4">

@@ -40,6 +40,24 @@ const page = () => {
             />
           </div>
         </div>
+        <div className="flex justify-center mt-10 items-center gap-10 flex-wrap">
+          <div className="flex">
+            <TeamPreview
+              imgURL="/team/taveesha.jpg"
+              name="Taveesha"
+              role="Frontend Developer"
+              github="https://github.com/0xLPircy"
+            />
+          </div>
+          <div className="flex">
+            <TeamPreview
+              imgURL="/team/manishi.jpg"
+              name="Manishi"
+              role="Designer"
+              github="https://github.com/0xManishi"
+            />
+          </div>
+        </div>
       </div>
       <div className="flex-grow"></div>
     </div>
