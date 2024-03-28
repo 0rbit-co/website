@@ -13,7 +13,7 @@ interface TeamPreviewProps {
 
 function TeamPreview({ imgURL, name, role, github }: TeamPreviewProps) {
   return (
-    <div>
+    <div className="">
       <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
         <Image
           src={imgURL}
