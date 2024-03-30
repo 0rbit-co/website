@@ -4,7 +4,7 @@ import QuestCard from "./QuestCard";
 
 const QuestsCall = () => {
   return (
-    <div className="flex md:flex-row md:gap-0 gap-6 flex-col items-center justify-evenly w-full">
+    <section className="flex md:flex-row md:gap-0 gap-6 flex-col items-center justify-evenly w-full">
       <QuestCard
         num="1"
         linker="https://github.com/0rbit-co/quest/blob/main/price-feed-bot.md"
@@ -19,7 +19,7 @@ const QuestsCall = () => {
         text="Create a Cron-bot that will post the latest news every 4 hours."
         points="300000"
       />
-    </div>
+    </section>
   );
 };
 

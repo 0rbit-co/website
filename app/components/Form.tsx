@@ -48,7 +48,7 @@ function Form() {
   };
 
   return (
-    <div>
+    <article>
       <ToastContainer />
       <form
         onSubmit={onSubmit}
@@ -92,7 +92,7 @@ function Form() {
           </button>
         </div>
       </form>
-    </div>
+    </article>
   );
 }
 

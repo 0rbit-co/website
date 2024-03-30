@@ -26,9 +26,9 @@ function SpotlightPreview() {
         <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
           First ever Decentralised <br /> Oracle on Arweave.
         </h1>
-        <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
-          Build with Permanent Data
-        </p>
+        <h2 className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
+          Access On-Chain and Off-Chain Data
+        </h2>
         <div className="flex items-center justify-center mt-4 gap-8">
           <a href="https://github.com/0rbit-co">
             <button className="inline-flex gap-4 h-12 animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">

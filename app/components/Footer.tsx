@@ -9,7 +9,7 @@ import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="sm:mt-32 mt-6 lg:m-6 px-12">
+    <footer className="sm:mt-32 mt-6 lg:m-6 px-12">
       <div className="flex sm:flex-row flex-col justify-between items-center sm:gap-0 gap-3">
         <Image
           src="/svg/main-unit.svg"
@@ -39,7 +39,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
