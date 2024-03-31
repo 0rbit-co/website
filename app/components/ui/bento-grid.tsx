@@ -32,18 +32,18 @@ export const BentoGridItem = ({
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   icon?: React.ReactNode;
-  bgImage?: string; 
+  bgImage?: string;
 }) => {
   return (
-    <div
+    <article
       className={cn(
         "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
         className
       )}
       style={{
-        backgroundImage: bgImage ? `url(${bgImage})` : 'none',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
+        backgroundImage: bgImage ? `url(${bgImage})` : "none",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
       }}
     >
       {header}
@@ -56,6 +56,6 @@ export const BentoGridItem = ({
           {description}
         </div>
       </div>
-    </div>
+    </article>
   );
 };

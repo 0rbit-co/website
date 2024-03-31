@@ -9,8 +9,9 @@ import FloatingNavDemo from "./components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "0rbit",
-  description: "",
+  title: "0rbit | Oracle on Arweave",
+  description:
+    "Decentralized Oracle on Arweave ecosystem for accessing off-chain data. Get data from any URL.",
 };
 
 export default function RootLayout({
