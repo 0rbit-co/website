@@ -2,7 +2,7 @@
 import React from "react";
 import { BackgroundGradient } from "@/app/components/ui/background-gradient";
 import Image from "next/image";
-import { FaGithub, FaTwitter } from "react-icons/fa";
+import { FaDribbble, FaGithub, FaTwitter } from "react-icons/fa";
 
 interface TeamPreviewProps {
   imgURL: string;
@@ -10,6 +10,7 @@ interface TeamPreviewProps {
   role: string;
   github: string;
   twitter: string;
+  dribble: string;
 }
 
 function TeamPreview({
@@ -18,6 +19,7 @@ function TeamPreview({
   role,
   github,
   twitter,
+  dribble,
 }: TeamPreviewProps) {
   return (
     <div className="">
@@ -35,11 +37,19 @@ function TeamPreview({
         <p className="text-sm mb-4 text-neutral-600 dark:text-neutral-400">
           {role}
         </p>
-        <button className="p-[9px] hover:bg-[#656565] rounded-full">
-          <a href={github}>
-            <FaGithub />
-          </a>
-        </button>{" "}
+        {github ? (
+          <button className="p-[9px] hover:bg-[#656565] rounded-full">
+            <a href={github}>
+              <FaGithub />
+            </a>
+          </button>
+        ) : (
+          <button className="p-[9px] hover:bg-[#656565] rounded-full">
+            <a href={dribble}>
+              <FaDribbble />
+            </a>
+          </button>
+        )}
         <button className="p-[9px] hover:bg-[#656565] rounded-full">
           <a href={twitter} className="">
             <FaTwitter />
