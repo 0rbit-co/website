@@ -34,6 +34,8 @@ export default function RootLayout({
 
   gtag('config', '${process.env.GOOGLE_ANALYTICS}');`}
         </Script>
+        <link rel="icon" type="image/svg+xml" href="../favicon.svg"></link>
+        <link rel="icon" type="image/png" href="../favicon.png"></link>
       </head>
       <body className={inter.className}>
         <FloatingNavDemo />
