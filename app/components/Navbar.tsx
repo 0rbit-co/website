@@ -17,13 +17,13 @@ function FloatingNavDemo() {
     },
     {
       name: "Quests",
-      link: "https://github.com/0rbit-co/quest/blob/main/quest.md",
+      link: "/quests",
     },
   ];
   return (
-    <div className="relative w-full">
+    <nav className="relative w-full">
       <FloatingNav navItems={navItems} />
-    </div>
+    </nav>
   );
 }
 

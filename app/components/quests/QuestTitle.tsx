@@ -2,17 +2,17 @@
 import React from "react";
 import { SparklesCore } from "@/app/components/ui/sparkles";
 
-interface SparklesPreviewProps {
+interface QuestTitleProps {
   title: string;
 }
 
-function SparklesPreview({ title }: SparklesPreviewProps) {
+function QuestTitle({ title }: QuestTitleProps) {
   return (
-    <div className="mt-0 lg:mt-20 w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <h2 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
+    <div className="mt-0 lg:mt-20 w-full bg-black flex flex-col items-start justify-start overflow-hidden rounded-md">
+      <h1 className="md:text-xl text-3xl lg:text-xl font-bold text-start text-white relative z-20">
         {title}
-      </h2>
-      <div className="w-[40rem] h-40 relative">
+      </h1>
+      <div className="w-[40rem] h-10 relative">
         {/* Gradients */}
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-yellow-500 to-transparent h-[2px] w-3/4 blur-sm" />
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-yellow-500 to-transparent h-px w-3/4" />
@@ -36,4 +36,4 @@ function SparklesPreview({ title }: SparklesPreviewProps) {
   );
 }
 
-export default SparklesPreview;
+export default QuestTitle;

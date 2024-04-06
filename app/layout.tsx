@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import FloatingNavDemo from "./components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "0rbit",
-  description: "",
+  title: "0rbit | Oracle on Arweave",
+  description:
+    "Decentralized Oracle on Arweave ecosystem for accessing off-chain data. Get data from any URL.",
 };
 
 export default function RootLayout({
@@ -16,8 +21,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
-      <Analytics/>
+      <head>
+        <Script
+          strategy="lazyOnload"
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+        ></Script>
+        <Script id="google-analytics" strategy="lazyOnload">
+          {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${process.env.GOOGLE_ANALYTICS}');`}
+        </Script>
+      </head>
+      <body className={inter.className}>
+        <FloatingNavDemo />
+        {children}
+        <Footer />
+      </body>
+      <Analytics />
     </html>
   );
 }
