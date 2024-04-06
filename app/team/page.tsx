@@ -21,6 +21,7 @@ const page = () => {
               name="Lucifer"
               role="Backend and Infrastructure"
               github="https://github.com/Lucifer0x17"
+              twitter="https://x.com/Lucifer0x17?t=fH5LRms3xy2hSPLJbNubaA&s=09"
             />
           </article>
           <article className="flex">
@@ -29,6 +30,7 @@ const page = () => {
               name="Sarthak"
               role="Frontend"
               github="https://github.com/Not-Sarthak"
+              twitter="https://x.com/0xSarthak13?t=nvsUz9hxhq2hQO25wr8Rtw&s=09"
             />
           </article>
           <article className="flex">
@@ -37,6 +39,7 @@ const page = () => {
               name="Megabyte"
               role="Smart Contract Developer"
               github="https://github.com/megabyte0x"
+              twitter="https://x.com/megabyte0x?t=WZYKcJAvN-CM7a6yU4lPNQ&s=09"
             />
           </article>
         </section>
@@ -47,6 +50,7 @@ const page = () => {
               name="Taveesha"
               role="Frontend Developer"
               github="https://github.com/0xLPircy"
+              twitter="https://x.com/0xLPircy?t=Ppkfa4HmoEsfPMEeYJCisw&s=09"
             />
           </article>
           <article className="flex">
@@ -55,6 +59,7 @@ const page = () => {
               name="Manishi"
               role="Designer"
               github="https://github.com/0xManishi"
+              twitter="https://x.com/0xManishi?t=FKn7XBJwlIXwJR-f4KGkzw&s=09"
             />
           </article>
         </section>
