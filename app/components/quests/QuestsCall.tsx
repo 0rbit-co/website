@@ -4,7 +4,7 @@ import QuestCard from "./QuestCard";
 
 const QuestsCall = () => {
   return (
-    <div className="flex md:flex-row md:gap-0 gap-6 flex-col items-center justify-evenly w-full">
+    <section className="flex md:flex-row md:gap-0 gap-6 flex-col items-center justify-evenly w-full">
       <QuestCard
         num="1"
         linker="https://github.com/0rbit-co/quest/blob/main/price-feed-bot.md"
@@ -26,7 +26,7 @@ const QuestsCall = () => {
         text="Create an ao process using BetterIdea (with functionality)"
         points="50"
       />
-    </div>
+    </section>
   );
 };
 

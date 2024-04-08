@@ -21,9 +21,9 @@ function FloatingNavDemo() {
     },
   ];
   return (
-    <div className="relative w-full">
+    <nav className="relative w-full">
       <FloatingNav navItems={navItems} />
-    </div>
+    </nav>
   );
 }
 

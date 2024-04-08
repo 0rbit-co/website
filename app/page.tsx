@@ -11,15 +11,15 @@ import ContactPreview from "./components/ContactPreview";
 
 const page = () => {
   return (
-    <div>
+    <main>
       <div className="">
         <SpotlightPreview />
       </div>
-      <div className="m-20">
+      <section className="m-20">
         <SparklesPreview title="Features" />
         <BentoGridPreview />
-      </div>
-      <div className="">
+      </section>
+      <section className="">
         <SparklesPreview title="Services" />
         <div className="flex gap-8 justify-center flex-wrap">
           <ServicesCard
@@ -33,15 +33,15 @@ const page = () => {
             imgUri="/price-feed.svg"
           />
         </div>
-      </div>
-      <div className="my-20">
+      </section>
+      <section className="my-20">
         <Support />
-      </div>
-      <div className="my-20">
+      </section>
+      <section className="my-20">
         <ContactPreview title="Contact Us" />
         <Form />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

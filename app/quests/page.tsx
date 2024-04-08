@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const QuestsPage = () => {
   return (
-    <div className="min-h-[100vh] flex flex-col items-center">
+    <main className="min-h-[100vh] flex flex-col items-center">
       {" "}
       <FloatingNavDemo />
       <div className="">
@@ -43,7 +43,7 @@ const QuestsPage = () => {
       {/* <div className="bottom-0 my-[18px] w-full md:absolute px-6">
         <Footer />
       </div> */}
-    </div>
+    </main>
   );
 };
 
