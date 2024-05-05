@@ -12,9 +12,10 @@ interface CardProps {
   image: string;
   title: string;
   description: string;
+  url: string;
 }
 
-const Card: React.FC<CardProps> = ({ image, title, description }) => {
+const Card: React.FC<CardProps> = ({ image, title, description, url }) => {
   return (
     <section
       className={` bg-[linear-gradient(0deg,_#9aa083,_#25291C)] p-[0.9px]
@@ -41,7 +42,7 @@ const Card: React.FC<CardProps> = ({ image, title, description }) => {
           alt="cover"
           width={300}
           height={150}
-          className="w-full rounded-xl"
+          className="w-full rounded-[30px] p-4"
         />
         <p
           className={`text-center text-[#f1f1f1]  pb-[3px]
@@ -52,12 +53,14 @@ const Card: React.FC<CardProps> = ({ image, title, description }) => {
         >
           {description.slice(0, 154)}...
         </p>
+        <a href={url}>
         <div
           className={`lg:text-[12px] md:text-[10.5px] text-[6px] text-center ${brandSecondaryText} font-normal 
         flex items-center justify-center gap-[1px] pt-2 hover:underline pb-[3px]`}
         >
           Read More <GoArrowUpRight />
         </div>
+        </a>
       </div>
     </section>
   );
