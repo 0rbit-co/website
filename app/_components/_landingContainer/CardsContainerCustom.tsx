@@ -10,6 +10,7 @@ interface BlogData {
   image: string;
   title: string;
   description: string;
+  link: string;
 }
 
 const CardsContainerCustom = () => {
@@ -76,6 +77,7 @@ const CardsContainerCustom = () => {
                 image={item.image}
                 title={item.title}
                 description={item.description}
+                url={item.link}
               />
             </div>
           ))}
