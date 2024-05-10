@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     icon: [
       {
         media: "(prefers-color-scheme: light)",
-        url: "/logos/sqLight.svg",
-        href: "/logos/sqLight.svg",
+        url: "/favicon.ico",
+        href: "/favicon.ico",
       },
       {
         media: "(prefers-color-scheme: dark)",
-        url: "/logos/sqDark.svg",
-        href: "/logos/sqDark.svg",
+        url: "/favicon.ico",
+        href: "/favicon.ico",
       },
     ],
   },
@@ -51,6 +51,7 @@ export default function RootLayout({
 
   gtag('config', '${process.env.GOOGLE_ANALYTICS}');`}
         </Script>
+        <link rel="icon" href="./favicon.ico" sizes="any" />
       </head>
       <body
         className={`${raleway.className} min-h-[100vh] ${brandLightBg} flex flex-col items-center`}
