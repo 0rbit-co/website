@@ -17,8 +17,11 @@ export const quests = [
     submission: "https://github.com/0rbit-co/quest",
     pts: "300",
   },
+];
+
+export const completedQuests = [
   {
-    id: 3,
+    id: 1,
     qname: "BetterIDEa",
     imag: "betterIDEa",
     info: "Create an ao process using BetterIdea (with functionality)",

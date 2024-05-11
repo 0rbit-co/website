@@ -56,7 +56,7 @@ const QuestCard: React.FC<QuestProps> = ({
         />
       </div>
       <h2
-        className="text-center font-semibold pb-[6px] 
+        className="text-center font-semibold pb-[2px] 
       xl:text-[27px] xl:leading-[27px] 
       md:text-[21px] md:leading-[24px] "
       >
