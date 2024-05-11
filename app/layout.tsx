@@ -1,17 +1,34 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-import { Inter } from "next/font/google";
+import { Inter, Raleway } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import FloatingNavDemo from "./components/Navbar";
+import { Footer, Nav } from "./_components";
+import { brandLightBg } from "./_utils/colors";
+import Script from "next/script";
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "0rbit | Oracle on Arweave",
   description:
-    "Decentralized Oracle on Arweave ecosystem for accessing off-chain data. Get data from any URL.",
+    "The Decentralized Oracle Network on AO for accessing the off-chain data.",
+  icons: {
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/favicon.ico",
+        href: "/favicon.ico",
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/favicon.ico",
+        href: "/favicon.ico",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -34,15 +51,15 @@ export default function RootLayout({
 
   gtag('config', '${process.env.GOOGLE_ANALYTICS}');`}
         </Script>
-        <link rel="icon" type="image/svg+xml" href="../favicon.svg"></link>
-        <link rel="icon" type="image/png" href="../favicon.png"></link>
+        <link rel="icon" href="./favicon.ico" sizes="any" />
       </head>
-      <body className={inter.className}>
-        <FloatingNavDemo />
+      <body
+        className={`${raleway.className} min-h-[100vh] ${brandLightBg} flex flex-col items-center`}
+      >
+        {" "}
+        <Nav />
         {children}
-        <Footer />
       </body>
-      <Analytics />
     </html>
   );
 }

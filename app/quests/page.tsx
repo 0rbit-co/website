@@ -1,49 +1,101 @@
-import React from "react";
-import SpotlightPreview from "../components/SpotlightPreview";
-import FloatingNavDemo from "../components/Navbar";
-import { Spotlight } from "../components/ui/Spotlight";
-import SparklesPreview from "../components/SparklesPreview";
-import Link from "next/link";
-import Footer from "../components/Footer";
-import QuestsCall from "../components/quests/QuestsCall";
-import Image from "next/image";
+"use client";
+
+import React, {useState} from "react";
+import { Footer, QuestCard } from "../_components";
+import { brandDarkText, brandSecondaryText } from "../_utils/colors";
+import { completedQuests, quests } from "../_utils/quests";
 
 const QuestsPage = () => {
+  const [activeTab, setActiveTab] = useState("active");
+
+  const handleTabClick = (tab: any) => {
+    setActiveTab(tab);
+  };
+
   return (
-    <main className="min-h-[100vh] flex flex-col items-center">
-      {" "}
-      <FloatingNavDemo />
-      <div className="">
-        <Spotlight
-          className="-top-40 left-0 md:left-60 md:-top-20"
-          fill="white"
-        />
-      </div>
-      <SparklesPreview title="Quests" />
-      {/* <h2 className="text-[18px] text-[#FFD700]  text-center mt-[21px]">
-        Note: Before picking up the quest please get yourself familiar with
-        <Link href="https://cookbook_ao.arweave.dev/welcome/index.html">
-          https://cookbook_ao.arweave.dev/welcome/index.html
-        </Link>{" "}
-        and then Join{" "}
-        <span className="bg-[#ffffff17] py-[3px] px-[6px] rounded-sm text-[#eeeeee]">
-          Quest
+    <div>
+    <main
+      className={`min-w-[100vw] max-w-[1800px] flex flex-col items-center justify-center ${brandDarkText} 
+      sm:px-[18px] px-[12px] pt-[10vh] min-h-[93vh] lg:pb-[30px]`}
+    >
+      <h1
+        className="uppercase tracking-wider font-medium 
+      xl:text-[60px] xl:leading-[66px]
+      lg:text-[39px] lg:leading-[54px]
+      md:text-[33px] md:leading-[39px]
+      text-[27px] leading-[42px]"
+      >
+        Quests
+      </h1>
+      <h3
+        className="pb-6 font-medium tracking-wide text-center md:px-0 px-3
+      xl:text-[24px] xl:leading-[27px] md:text-[18px] md:leading-[21px] text-[18px] leading-[21px]"
+      >
+        <span className={`font-[Medium] tracking-wide`}>0rbit</span> quests are
+        challenges that will help you learn about
+        <br />
+        <span className={`font-[Medium] tracking-wide`}>0rbit</span> and ao and
+        earn some{" "}
+        <span className={`${brandSecondaryText} font-[Regular] tracking-wide`}>
+          $0RBT
         </span>{" "}
-        channel and there pick up the quest and submit using the command
-        mentioned in the Url.
-      </h2> */}
-      <QuestsCall />
-      <Image
-        src="/quest/questStage.svg"
-        alt="quests oracle"
-        className="z-[-10] md:mt-[-21px] mt-[-12px] w-full"
-        height={300}
-        width={900}
-      />
-      {/* <div className="bottom-0 my-[18px] w-full md:absolute px-6">
-        <Footer />
-      </div> */}
+        along the way.{" "}
+      </h3>
+      <div className="flex items-center gap-4 pb-8">
+          <button
+            className={`text-center text-black text-lg font-semibold ${
+              activeTab === "active" ? "bg-orange" : "bg-orange/60"
+            } px-3 py-0.5 rounded-xl w-28`}
+            onClick={() => handleTabClick("active")}
+          >
+            Active
+          </button>
+          <button
+            className={`text-center text-black text-lg font-semibold ${
+              activeTab === "completed" ? "bg-orange" : "bg-orange/60"
+            } px-3 py-0.5 rounded-xl w-32`}
+            onClick={() => handleTabClick("completed")}
+          >
+            Completed
+          </button>
+        </div>
+        <div
+          className="lg:flex lg:flex-row md:grid md:grid-cols-2 pb-2 flex flex-col lg:gap-9 md:gap-4 gap-[33px] items-center justify-center"
+        >
+          {activeTab === "active" &&
+            quests.map((quest, key) => {
+              return (
+                <QuestCard
+                  key={key}
+                  qname={quest.qname}
+                  info={quest.info}
+                  imag={quest.imag}
+                  repo={quest.repo}
+                  submission={quest.submission}
+                  pts={quest.pts}
+                  last={key + 1 === quests.length && quests.length % 2 !== 0}
+                />
+              );
+            })}
+          {activeTab === "completed" &&
+            completedQuests.map((quest, key) => {
+              return (
+                <QuestCard
+                  key={key}
+                  qname={quest.qname}
+                  info={quest.info}
+                  imag={quest.imag}
+                  repo={quest.repo}
+                  submission={quest.submission}
+                  pts={quest.pts}
+                  last={key + 1 === quests.length && quests.length % 2 !== 0}
+                />
+              );
+            })}
+        </div>
     </main>
+    <Footer />
+    </div>
   );
 };
 
