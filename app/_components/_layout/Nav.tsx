@@ -18,7 +18,8 @@ import { usePathname } from "next/navigation";
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const path = usePathname().split("/");
-  console.log(path[1]);
+  const validPaths = ["home", "team", "quests"];
+  const pageTitle = validPaths.includes(path[1]?.toLowerCase()) ? path[1] : "Home"; 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -117,7 +118,7 @@ const Nav = () => {
               width={12}
               className="rl"
             />
-            <h6 className=" capitalize">{path[1] ? path[1] : "Home"}</h6>
+            <h6 className="capitalize">{pageTitle}</h6>
           </div>
         </div>
       </nav>
