@@ -62,7 +62,7 @@ const Nav = () => {
               width={12}
               className="rl sm:w-[15px] sm:h-[15px] w-[12px] h-[12px]"
             />
-            <h6 className=" capitalize">{path[1] ? path[1] : "Home"}</h6>
+            <h6 className=" capitalize">{pageTitle}</h6>
           </div>
           <Link
             href={path[1] == "quests" ? "/" : "/quests"}
