@@ -36,7 +36,7 @@ const Companies: React.FC = () => {
           height={220}
           className="self-center place-self-center transition-transform duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
         xl:w-[240px] xl:h-[120px] 
-        w-[180px] h-[90px] "
+        w-[180px] h-[90px]"
         />
       </a>
       <a href="https://ide.betteridea.dev/">
