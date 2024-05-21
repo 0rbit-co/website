@@ -42,7 +42,7 @@ const Card: React.FC<CardProps> = ({ image, title, description, url }) => {
           alt="cover"
           width={300}
           height={150}
-          className="w-full rounded-[30px] p-3"
+          className="w-full rounded-[30px] py-3 px-3.5"
         />
         <p
           className={`text-center text-[#f1f1f1]  pb-[3px]
