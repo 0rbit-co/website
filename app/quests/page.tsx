@@ -63,20 +63,21 @@ const QuestsPage = () => {
           className="lg:flex lg:flex-row md:grid md:grid-cols-2 pb-2 flex flex-col lg:gap-9 md:gap-4 gap-[33px] items-center justify-center"
         >
           {activeTab === "active" &&
-            quests.map((quest, key) => {
-              return (
-                <QuestCard
-                  key={key}
-                  qname={quest.qname}
-                  info={quest.info}
-                  imag={quest.imag}
-                  repo={quest.repo}
-                  submission={quest.submission}
-                  pts={quest.pts}
-                  last={key + 1 === quests.length && quests.length % 2 !== 0}
-                />
-              );
-            })}
+            // quests.map((quest, key) => {
+            //   return (
+            //     // <QuestCard
+            //     //   key={key}
+            //     //   qname={quest.qname}
+            //     //   info={quest.info}
+            //     //   imag={quest.imag}
+            //     //   repo={quest.repo}
+            //     //   submission={quest.submission}
+            //     //   pts={quest.pts}
+            //     //   last={key + 1 === quests.length && quests.length % 2 !== 0}
+            //     // />
+            //   );
+            <div className="text-oliveGreen">No ongoing quests at the moment—please check back later for new quests!</div>
+          }
           {activeTab === "completed" &&
             completedQuests.map((quest, key) => {
               return (
