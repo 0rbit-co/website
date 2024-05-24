@@ -76,7 +76,7 @@ const QuestsPage = () => {
             //     //   last={key + 1 === quests.length && quests.length % 2 !== 0}
             //     // />
             //   );
-            <div className="text-oliveGreen">No ongoing quests at the moment—please check back later for new quests!</div>
+            <div className="text-oliveGreen text-center">No ongoing quests at the moment—please check back later for new quests!</div>
           }
           {activeTab === "completed" &&
             completedQuests.map((quest, key) => {
@@ -95,7 +95,6 @@ const QuestsPage = () => {
             })}
         </div>
     </main>
-    <Footer />
     </div>
   );
 };
