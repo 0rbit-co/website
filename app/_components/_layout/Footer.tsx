@@ -3,9 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import {
-  brandDarkBg,
   brandDarkText,
-  brandLightText,
   brandSecondaryText,
 } from "../../_utils/colors";
 import { FaTwitter } from "react-icons/fa";
@@ -18,7 +16,7 @@ const Footer = () => {
   const path = usePathname();
   return (
     <footer
-      className={`flex flex-row gap-3 md:items-center items-end justify-between bottom-0 
+      className={`flex flex-col md:flex-row gap-3 md:items-center items-center justify-between bottom-0 
        py-[12px] md:px-[30px] px-[9px] w-[100vw] max-w-[1800px]
        border-t-[1.2px] border-[#000000]
    ${path == "/quests"
@@ -27,13 +25,20 @@ const Footer = () => {
         }
  `}
     >
-      <div className="flex flex-row items-end justify-end gap-[9px]">
+      <div className="flex flex-col lg:flex-row items-end justify-end gap-[9px]">
         <Image
           width={60}
           height={60}
           src="/logos/recLight.svg"
           alt="logo"
           className="md:block hidden"
+        />
+        <Image
+          width={60}
+          height={60}
+          src="/logos/recLight.svg"
+          alt="logo"
+          className="md:hidden w-[45px] h-[24px] "
         />
         <h4
           className={`${brandSecondaryText} md:text-[12px] text-[9px] tracking-tighter font-[Regular] pb-[3px]`}
@@ -42,15 +47,8 @@ const Footer = () => {
         </h4>
       </div>
       <div className="flex flex-col justify-center items-center gap-1">
-        <Image
-          width={60}
-          height={60}
-          src="/logos/recLight.svg"
-          alt="logo"
-          className="md:hidden w-[45px] h-[24px] "
-        />
         <div
-          className="flex flex-row items-center justify-center sm:gap-6 gap-3 footerTrans
+          className="flex flex-row items-center justify-center sm:gap-6 gap-3
       md:text-[15px] text-[9px]"
         >
           <Link
@@ -72,6 +70,13 @@ const Footer = () => {
             className={`flex flex-row gap-[3px] hover:text-[#EB8F44] hover:tracking-wider hover:underline`}
           >
             <h4>Docs</h4>
+            <Image width={8} height={8} src={arrDark} alt="arrow" />
+          </Link>
+          <Link
+            href="https://playground.0rbit.co/"
+            className={`flex flex-row gap-[3px] hover:text-[#EB8F44] hover:tracking-wider hover:underline`}
+          >
+            <h4>Playground</h4>
             <Image width={8} height={8} src={arrDark} alt="arrow" />
           </Link>
           <Link
@@ -100,10 +105,6 @@ const Footer = () => {
           />
         </Link>
       </div>
-      {/* Right Circuit */}
-      {/* <div className="hidden lg:block">
-        <Image alt="circuit" src="/footerR.svg" width={90} height={90} />
-      </div> */}
     </footer>
   );
 };
