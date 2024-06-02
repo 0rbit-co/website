@@ -44,6 +44,23 @@ const Footer = () => {
           &copy; 2024 0rbit
         </h4>
       </div>
+      <div className="flex md:hidden flex-row md:gap-6 gap-[6px] items-center justify-center">
+        <Link href="https://twitter.com/0rbitco">
+          <FaTwitter
+            className={`${brandDarkText} hover:opacity-75 md:w-6 md:h-6 w-[15px] h-[15px]`}
+          />
+        </Link>
+        <Link href="https://discord.gg/JVSjqaKJgV">
+          <FaDiscord
+            className={`${brandDarkText} hover:opacity-75 md:w-6 md:h-6 w-[15px] h-[15px]`}
+          />
+        </Link>
+        <Link href="https://github.com/0rbit-co">
+          <TbBrandGithubFilled
+            className={`${brandDarkText} hover:opacity-75 md:w-6 md:h-6 w-[15px] h-[15px]`}
+          />
+        </Link>
+      </div>
       <div className="flex flex-col justify-center items-center gap-1">
         <div
           className="flex flex-row items-center justify-center sm:gap-6 gap-3
@@ -83,10 +100,10 @@ const Footer = () => {
           >
             <h4>Team</h4>
             <Image width={8} height={8} src={arrDark} alt="arrow" />
-          </Link>
+          </Link> 
         </div>
       </div>
-      <div className="flex flex-row md:gap-6 gap-[6px] items-center justify-center">
+      <div className="md:flex hidden flex-row md:gap-6 gap-[6px] items-center justify-center">
         <Link href="https://twitter.com/0rbitco">
           <FaTwitter
             className={`${brandDarkText} hover:opacity-75 md:w-6 md:h-6 w-[15px] h-[15px]`}
