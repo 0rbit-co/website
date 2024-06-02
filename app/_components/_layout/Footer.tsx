@@ -23,7 +23,7 @@ const Footer = () => {
    }
  `}
     >
-      <div className="flex flex-col lg:flex-row items-end justify-end md:gap-[9px]">
+      <div className="flex flex-col lg:flex-row items-center justify-center md:gap-[9px]">
         <Image
           width={60}
           height={60}
@@ -32,11 +32,11 @@ const Footer = () => {
           className="md:block hidden"
         />
         <Image
-          width={60}
-          height={60}
+          width={90}
+          height={90}
           src="/logos/recLight.svg"
           alt="logo"
-          className="md:hidden w-[45px] h-[24px] "
+          className="md:hidden w-[60px] h-[50px] "
         />
         <h4
           className={`${brandSecondaryText} md:text-[12px] text-[9px] tracking-tighter font-[Regular] pb-[3px]`}
