@@ -23,7 +23,7 @@ const Footer = () => {
    }
  `}
     >
-      <div className="flex flex-col lg:flex-row items-center justify-center md:gap-[9px]">
+      <div className="flex flex-col lg:flex-row items-center justify-center md:justify-end md:items-end md:gap-[9px]">
         <Image
           width={60}
           height={60}
