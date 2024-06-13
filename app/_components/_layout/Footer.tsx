@@ -62,7 +62,7 @@ const Footer = () => {
             &copy; 2024 0rbit
           </h4>
       </div>
-      <div className="flex md:hidden flex-row md:gap-6 gap-6 items-center justify-center mt-1 md:mt-0">
+      <div className="flex md:hidden flex-row md:gap-6 gap-5 items-center justify-center mt-1 md:mt-0">
         <Link
           href="https://twitter.com/0rbitco"
           onClick={() => handleLinkClick("Twitter", 1)}
@@ -90,7 +90,7 @@ const Footer = () => {
       </div>
       <div className="flex flex-col justify-center items-center gap-1">
         <div
-          className="flex flex-row items-center justify-center sm:gap-6 gap-6 font-semibold mt-2
+          className="flex flex-row items-center justify-center sm:gap-6 gap-3 mr-4 font-semibold mt-2
       md:text-[15px] text-[12px]"
         >
           <Link
