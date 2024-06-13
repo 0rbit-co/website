@@ -13,8 +13,37 @@ interface BlogData {
   link: string;
 }
 
+const event = ({ action, category, label, value }: any) => {
+  (window as any).gtag('event', action, {
+    event_category: category,
+    event_label: label,
+    value: value,
+  });
+};
+
 const CardsContainerCustom = () => {
   const [main, setMain] = useState(1);
+
+  const handlePrevClick = () => {
+    setMain(main - 1);
+    event({
+      action: 'click_prev_blog',
+      category: 'Navigation',
+      label: 'Previous Blog',
+      value: main - 1,
+    });
+  };
+
+  const handleNextClick = () => {
+    setMain(main + 1);
+    event({
+      action: 'click_next_blog',
+      category: 'Navigation',
+      label: 'Next Blog',
+      value: main + 1,
+    });
+  };
+
   return (
     <section className="fadeInScroll flex flex-col items-center justify-center">
       <h2
@@ -34,10 +63,8 @@ const CardsContainerCustom = () => {
       min-h-[240px] "
       >
         <button
-          disabled={main == 0 ? true : false}
-          onClick={() => {
-            setMain(main - 1);
-          }}
+          disabled={main == 0}
+          onClick={handlePrevClick}
           className={`${brandDarkBg} p-2 h-fit rounded-full w-fit 
           block absolute 
           place-self-end md:place-self-center 
@@ -82,36 +109,9 @@ const CardsContainerCustom = () => {
             </div>
           ))}
         </div>
-        {/* <div className="flex md:hidden flex-row gap-6 items-center absolute lg:w-[330px] w-[240px] h-full mx-12 cardlg:translate-x-0 ">
-          {blogData.map((item: BlogData, index: number) => (
-            <div
-              className={`absolute ${
-                index == main
-                  ? "blur-0 translate-x-[0%] z-10 scale-100"
-                  : index == main - 1 || index == main + 1
-                  ? `blur-[3px] scale-50 ${
-                      index < main ? "translate-x-[-50%]" : "translate-x-[50%]"
-                    }`
-                  : index < main
-                  ? "translate-x-[-30%] scale-50 opacity-0 -z-10"
-                  : "translate-x-[30%] scale-50 opacity-0 -z-10"
-              }`}
-              key={item.id}
-            >
-              <Card
-                image={item.image}
-                title={item.title}
-                description={item.description}
-              />
-            </div>
-          ))}
-        </div> */}
         <button
-          disabled={main == blogData.length - 1 ? true : false}
-          onClick={() => {
-            console.log("clicked");
-            setMain(main + 1);
-          }}
+          disabled={main == blogData.length - 1}
+          onClick={handleNextClick}
           className={`${brandDarkBg} p-2 h-fit rounded-full w-fit 
           block absolute 
           place-self-end md:place-self-center 
@@ -119,7 +119,7 @@ const CardsContainerCustom = () => {
         >
           <Image
             src="/icons/arrowRightSecondary.svg"
-            alt="prev"
+            alt="next"
             height={15}
             width={15}
             className="md:w-[18px] md:h-[18px] w-[13.5px] h-[13.5px]"
