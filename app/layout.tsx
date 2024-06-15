@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "0rbit | Oracle on Arweave",
   description:
-    "The Decentralized Oracle Network on AO for accessing the off-chain data.",
+    "The Decentralized Oracle Network on AO for accessing any off-chain data.",
   icons: {
     icon: [
       {
