@@ -52,7 +52,7 @@ export default function RootLayout({
           property="og:image:secure_url"
           content="https://www.0rbit.co/logos/ogLogo.jpg"
         />
-        <meta property="og:url" content="https://www.playground.0rbit.co" />
+        <meta property="og:url" content="https://www.0rbit.co" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
