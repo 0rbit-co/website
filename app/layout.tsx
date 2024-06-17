@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta property="og:title" content="0rbit | Oracle" />
+        <meta property="og:title" content="0rbit | Oracle on Arweave" />
         <meta
           property="og:description"
           content="Decentralized Oracle on Arweave ecosystem for accessing off-chain data. Get data from any URL."
@@ -57,7 +57,7 @@ export default function RootLayout({
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="0rbit | Playground" />
+        <meta name="twitter:title" content="0rbit | Oracle on Arweave" />
         <meta
           name="twitter:description"
           content="Decentralized Oracle on Arweave ecosystem for accessing off-chain data. Get data from any URL."
