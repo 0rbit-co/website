@@ -39,6 +39,33 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta property="og:title" content="0rbit | Oracle on Arweave" />
+        <meta
+          property="og:description"
+          content="Decentralized Oracle on Arweave ecosystem for accessing off-chain data. Get data from any URL."
+        />
+        <meta
+          property="og:image"
+          content="https://www.0rbit.co/logos/ogBanner.jpeg"
+        />
+        <meta
+          property="og:image:secure_url"
+          content="https://www.0rbit.co/logos/ogBanner.jpeg"
+        />
+        <meta property="og:url" content="https://www.0rbit.co" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="0rbit | Oracle on Arweave" />
+        <meta
+          name="twitter:description"
+          content="Decentralized Oracle on Arweave ecosystem for accessing off-chain data. Get data from any URL."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.0rbit.co/logos/ogLogo.jpg"
+        />
         <Script
           strategy="lazyOnload"
           async
