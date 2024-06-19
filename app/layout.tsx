@@ -46,13 +46,13 @@ export default function RootLayout({
         />
         <meta
           property="og:image"
-          content="https://www.0rbit.co/logos/ogLogo.jpg"
+          content="https://www.0rbit.co/logos/ogBanner.jpeg"
         />
         <meta
           property="og:image:secure_url"
-          content="https://www.0rbit.co/logos/ogLogo.jpg"
+          content="https://www.0rbit.co/logos/ogBanner.jpeg"
         />
-        <meta property="og:url" content="https://www.playground.0rbit.co" />
+        <meta property="og:url" content="https://www.0rbit.co" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
